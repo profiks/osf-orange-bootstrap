@@ -1,0 +1,452 @@
+@import "reset.css";
+$white:#fff;
+$orange: #ff8809; 
+$orangeDark: #ff7400;
+$gray: #939393;
+$BorderUl: #292929;
+
+
+
+$mobile-small:   240px;
+$mobile-large:   320px;
+$tablet-small:   480px;
+$tablet-large:	 768px;
+$screen-small:	 1024px;
+$screen-large:	 1280px;
+
+
+
+/*typografy*/
+@font-face {
+  font-family:'Fangtasia';
+  src: url('Fangtasia.ttf');
+}
+@font-face {
+  font-family: 'Helvetica';
+  src: url(helvetica-bold.ttf);
+}
+
+a{  text-decoration: none;  
+    font-size: 13pt;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;    
+    text-shadow: -2px 3px 2px rgba(150, 150, 150, 1);
+    color: $white;
+    &:hover{
+        color: $orangeDark;
+        text-shadow: none;
+        text-decoration: none; 
+    }
+}
+
+b{  
+    color: $white;
+    font-weight: bold;
+    font-size: 13pt;
+    font-family: Helvetica,sans-serif;
+}
+
+
+
+p{
+     font-size: 11pt;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    color: $white;
+    line-height: 1.5;
+}
+h2 {
+    font-size: 24pt;
+    font-family: "Helvetica", sans-serif;
+    font-style: bold;
+    color: $white;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    }
+
+h3 {
+            
+    font-size: 11pt;
+    font-family: "Helvetica", sans-serif;
+    font-style: bold;
+    color: $white;
+    padding: 10px 1px;
+}
+
+
+.orange {
+        color:$orange;
+}
+    
+
+.border_t{
+    width: auto;
+    height: 3px;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.border_1{
+    @extend .border_t;
+    background: url(../img/border_1.jpg) repeat-x;
+    margin-bottom: 24px;
+}
+.border_2{
+    @extend .border_t;
+    background: url(../img/border_2.jpg);
+}
+
+.border_3{
+    @extend .border_t;
+    background: url(../img/border_3.jpg);
+}
+
+@mixin transition-width() {
+           -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+}
+
+@mixin bg-size(){
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.col-md-12,
+.col-md-6,
+.col-md-3,
+.col-md-4,
+.col-md-8{
+padding: 0;
+}
+
+
+
+.bg{
+    background: url(../img/background.jpg) no-repeat;
+   background-position: center center;  
+   background-attachment: fixed;
+    @include bg-size; 
+    width: 100%;
+    
+        /* Orande logo*/
+        .logo {
+            font-family: Fangtasia;
+            font-size: 60pt;
+            color: $white;
+            text-align: center;
+            text-shadow: -2px 3px 2px rgba(150, 150, 150, 1);
+            padding: 14px 0 0 0 ;
+
+            
+        }
+}
+
+
+.row {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+
+
+/*navigation & drop-down menu*/
+nav{ 
+    height: 53px;
+    width: 500px;
+        @media (max-width: 750px) { 
+             width: auto;
+        }
+        
+    text-align: center;    
+    padding-top: 20px;
+    position: relative;
+                    
+        .top_menu{
+            position: absolute;
+            z-index: 45465465;
+            width: 475px;
+            height: 219px;
+            background: url(../img/drop_down.png) no-repeat;
+            padding-top: 20px;                    
+ 
+             ul {
+                 float: left;
+                 border-right: 1px solid $BorderUl;
+                 
+                 padding: 0;
+                 margin: 0;
+                  &:last-child{
+                     border: none;
+                     }
+                 li{
+                     clear:both;
+                     line-height: 1.5;
+                     a {
+                         text-shadow: none;
+                         font-size: 11pt;
+                     }
+                    }
+             } 
+            }// end .top_menu
+        
+    
+        li {
+            float: left;
+             padding: 0 15px 0 10px;
+                @media (max-width: 750px) { 
+                width: auto;
+                clear: left;
+               
+                
+            } //end 
+
+        }
+   
+    
+} //end <nav>
+
+/*drop down*/
+nav ul .top_menu {
+	display: none;
+}
+
+	nav ul li:hover > .top_menu {
+		display: block;
+}
+
+
+
+/* jQuery slideshow */
+.slide {    
+    max-width: 980px;
+    //min-height: 451px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    position: relative;
+   
+
+    .rslides {
+      position: relative;
+      list-style: none;
+      overflow: hidden;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+       
+
+        li{
+      -webkit-backface-visibility: hidden;
+      position: absolute;
+      display: none;
+      width: 100%;
+      left: 0;
+      top: 0;
+        
+                &:first-child {
+                  position: relative;
+                  display: block;
+                  float: left;
+                  }
+      }
+
+    
+
+    img {
+      padding-left: 50px;
+      display: block;
+      height: auto;
+      float: left;
+      width: 100%;
+      border: 0;
+      }
+
+}
+    
+    .visit{
+        width: 145px;
+        height: 32px;
+        position: absolute;
+        left: 0;
+        bottom: 60px;
+        cursor: pointer;
+        z-index: 2;
+        background: url(../img/visit_site.png) no-repeat 0 0;
+         &:hover{             
+     background: url(../img/visit_site.png) no-repeat 0 -32px;
+            }
+        /* Portrait tablet to landscape and desktop */
+@media (max-width: 979px) { 
+    display: none;
+}
+        
+        
+    }
+    /*slideshov navigation*/
+    .next{
+        float: left;
+        margin-right: 9px;
+        width: 20px;
+        height: 24px;
+        background: url(../img/btn.png) no-repeat -20px 0;
+        cursor: pointer;
+        &:hover{
+        background: url(../img/btn.png) no-repeat -20px -24px;
+        }
+    } 
+    .prev {
+        float: left;
+        margin-right: 9px;
+        width: 20px;
+        height: 24px;
+        background: url(../img/btn.png) no-repeat 0 0;
+        cursor: pointer;
+        &:hover{
+            background: url(../img/btn.png) no-repeat 0 -24px;
+        }
+    }
+    
+    .countSlide{
+        position: absolute;
+        left:65px;
+        width: 130px;
+    }
+    
+   
+} 
+
+.content{
+        padding: 0 0 53px 0;
+        .col-md-3{  
+            
+   /* Portrait tablet to landscape and desktop */
+@media (min-width: $screen-small) { 
+    
+    max-width: 218px;
+    margin: 0 36px 0 0;
+     
+            &:last-child{
+                margin:  0;
+            }
+    
+
+
+} //end Desktop
+            
+@media (min-width:$tablet-large) and (max-width: $screen-small) { 
+    
+    max-width: 49%;
+    margin: 0 1% 0 0;
+     
+            &:last-child{
+                margin:  0;
+            }
+    
+
+
+} //end D
+        
+     
+        }  
+        .col-md-12{
+            padding: 23px 0 0 0;
+            
+             
+        }
+    
+}
+
+footer{
+    .border{
+        width: 100%;
+        height: 13px;
+        background: url(../img/border.jpg) repeat-x;
+    }
+}
+.container.footer{
+    
+ 
+
+background: url(../img/gradient.jpg) repeat; 
+    color: #fff;
+   width: 100%;
+    min-height: 727px;
+    padding-top: 69px;
+    position: relative;
+    
+    
+        .col-md-4{
+        padding: 0 23px 0 0;
+        }
+    
+        .absolute-orange{
+            width: 233px;
+            height: 170px;
+            background: url(../img/orange_footer.png) no-repeat;
+            position: absolute;
+            right: 0;
+            top: -120px;  
+        }
+         .glass{
+          width:73px ;
+          height: 63px;
+          background: url(../img/glass.jpg) no-repeat;
+          border: 4px solid $orangeDark;
+          margin: 15px 20px 22px 0;
+          //float: left;
+              &:last-child{
+                 // .clearfix;
+              }
+        }
+        
+        // tooltipe
+        .tooltip{
+            display: inline;
+            position: relative;
+            
+                &:hover:after{                    
+                    bottom: -40px;
+                    color: $gray;
+                    content: attr(title);
+                    left: 0;
+                    position: absolute;
+                    z-index: 98;
+                    width: 220px;
+                }
+                // arrow
+                &:hover:before{
+                    position: absolute;
+                    content: "";
+                    left: 8px;
+                    bottom: 20px;
+                    width: 0; 
+                    height: 0; 
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;	
+                    border-top: 8px solid $orangeDark;
+                
+                }
+        }
+    
+    
+}
+
+
+/*Fancybox close*/
+
+.fancybox-close{
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 89px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 856767676767040;
+    background: url(../img/video-close.png) no-repeat;
+    
+}
